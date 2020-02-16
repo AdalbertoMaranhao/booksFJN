@@ -10,18 +10,19 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         pager.adapter = BookPagerAdapter(this)
-        TabLayoutMediator(tabs, pager) {tab, position ->
-            tab.text = if (position == 0){
-                "livros"
-            }else {
-                "Favoritos"
-            }
+        TabLayoutMediator(tabs, pager) { tab, position ->
+            tab.setText(
+                if (position == 0) {
+                    R.string.tab_books
+                } else {
+                    R.string.tab_favorites
+                }
+            )
         }.attach()
 
     }
