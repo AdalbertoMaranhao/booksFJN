@@ -1,7 +1,10 @@
 package br.com.nglauber.books.ui
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import br.com.nglauber.books.R
@@ -53,6 +56,16 @@ class BookDetailActivity : AppCompatActivity() {
                     }
                 }
             )
+        }
+    }
+
+    companion object {
+        private const val EXTRA_BOOK = "book"
+
+        fun openWithVolume(context: Context, volume: Volume){
+            val intencao = Intent(context, BookDetailActivity::class.java)
+            intencao.putExtra("book", volume)
+            context.startActivity(intencao)
         }
     }
 }

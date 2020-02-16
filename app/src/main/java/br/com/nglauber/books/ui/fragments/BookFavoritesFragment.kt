@@ -14,7 +14,6 @@ import br.com.nglauber.books.model.Volume
 import br.com.nglauber.books.repository.BookRepository
 import br.com.nglauber.books.ui.BookDetailActivity
 import br.com.nglauber.books.ui.adapter.BookAdapter
-import br.com.nglauber.books.ui.viewmodel.BookDetailViewModel
 import br.com.nglauber.books.ui.viewmodel.BookFavoritesViewModel
 import br.com.nglauber.books.ui.viewmodel.BookVmFactory
 import kotlinx.android.synthetic.main.fragment_book_list.*
@@ -52,8 +51,6 @@ class BookFavoritesFragment : Fragment() {
     }
 
     private fun onVolumeClick(volume: Volume) {
-        val intent = Intent(requireContext(), BookDetailActivity::class.java)
-        intent.putExtra("book", volume)
-        startActivity(intent)
+        BookDetailActivity.openWithVolume(requireContext(), volume)
     }
 }
