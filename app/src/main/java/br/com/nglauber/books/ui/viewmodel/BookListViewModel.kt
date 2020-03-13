@@ -1,5 +1,6 @@
 package br.com.nglauber.books.ui.viewmodel
 
+import android.app.SearchManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

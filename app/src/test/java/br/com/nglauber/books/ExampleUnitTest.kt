@@ -1,5 +1,6 @@
 package br.com.nglauber.books
 
+import android.app.SearchManager
 import br.com.nglauber.books.http.BookHttp
 import org.junit.Test
 
@@ -13,7 +14,8 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun searchIsComplete() {
-        val searchResult = BookHttp.searchBook("Dominando o Android")
+        val query = SearchManager.QUERY
+        val searchResult = BookHttp.searchBook(query)
         searchResult?.items?.forEach { volume ->
             println(volume.volumeInfo.title)
         }

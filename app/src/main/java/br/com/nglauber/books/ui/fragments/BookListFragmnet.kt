@@ -1,6 +1,5 @@
 package br.com.nglauber.books.ui.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +14,6 @@ import br.com.nglauber.books.model.Volume
 import br.com.nglauber.books.ui.BookDetailActivity
 import br.com.nglauber.books.ui.adapter.BookAdapter
 import br.com.nglauber.books.ui.viewmodel.BookListViewModel
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_book_list.*
 
 class BookListFragmnet : Fragment() {
